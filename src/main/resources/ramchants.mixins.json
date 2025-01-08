@@ -5,8 +5,15 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BlockMixin",
+    "BowItemMixin",
+    "DamageUtilMixin",
+    "EnchantmentHelperAccessor",
+    "EnchantmentHelperMixin",
+    "EnchantmentMixin",
     "EntityAttributesMixin",
-    "LivingEntityMixin"
+    "FishingBobberEntityMixin",
+    "LivingEntityMixin",
+    "RangedWeaponItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

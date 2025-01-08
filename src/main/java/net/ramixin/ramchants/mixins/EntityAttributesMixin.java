@@ -13,9 +13,10 @@ import org.spongepowered.asm.mixin.injection.At;
 public abstract class EntityAttributesMixin {
 
     @WrapOperation(method = "<clinit>", at = @At(value = "NEW", target = "(Ljava/lang/String;DDD)Lnet/minecraft/entity/attribute/ClampedEntityAttribute;"))
-    private static ClampedEntityAttribute changeArgs(String string, double fallback, double min, double max, Operation<ClampedEntityAttribute> original) {
+    private static ClampedEntityAttribute modifyEntityAttributeInitParameters(String string, double fallback, double min, double max, Operation<ClampedEntityAttribute> original) {
         switch(string) {
             case "attribute.name.submerged_mining_speed", "attribute.name.water_movement_efficiency" -> min = -1;
+            case "attribute.name.mining_efficiency", "attribute.name.oxygen_bonus" -> min = -1024;
         }
         return original.call(string, fallback, min, max);
     }

@@ -1,0 +1,8 @@
+{
+  "item.bow.ghost_quiver": {
+    "subtitle": "sound.ramchants.ghost_quiver",
+    "sounds": [
+      "ramchants:random/ghost_quiver"
+    ]
+  }
+}

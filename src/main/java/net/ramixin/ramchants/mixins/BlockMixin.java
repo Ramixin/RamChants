@@ -31,4 +31,12 @@ public class BlockMixin {
         return newResult;
     }
 
+    @ModifyReturnValue(method = "getDroppedStacks(Lnet/minecraft/block/BlockState;Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Ljava/util/List;", at = @At("RETURN"))
+    private static List<ItemStack> applyVoiding(List<ItemStack> original, @Local(argsOnly = true) ItemStack userStack, @Local(argsOnly = true) ServerWorld world) {
+        Optional<RegistryEntry.Reference<Enchantment>> voidingEntry = world.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getEntry(ModEnchantments.VOIDING.getValue());
+        if(voidingEntry.isEmpty()) return original;
+        if(userStack.getEnchantments().getLevel(voidingEntry.get()) > 0) return List.of();
+        return original;
+    }
+
 }

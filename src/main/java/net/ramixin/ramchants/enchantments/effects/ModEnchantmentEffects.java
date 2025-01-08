@@ -1,19 +1,31 @@
 package net.ramixin.ramchants.enchantments.effects;
 
-import net.minecraft.enchantment.effect.EnchantmentEntityEffect;
+import net.minecraft.component.ComponentType;
+import net.minecraft.enchantment.effect.EnchantmentEffectEntry;
+import net.minecraft.enchantment.effect.EnchantmentValueEffect;
+import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.util.Unit;
 import net.ramixin.ramchants.Ramchants;
+
+import java.util.List;
+import java.util.function.UnaryOperator;
 
 public interface ModEnchantmentEffects {
 
     static void onInitialize() {
 
-        registerEntityEffect("electric_attraction", new ElectricAttractionEnchantmentEffect());
-
+        Registry.register(Registries.ENCHANTMENT_ENTITY_EFFECT_TYPE, Ramchants.id("electric_attraction"), ElectricAttractionEnchantmentEffect.CODEC);
+        Registry.register(Registries.ENCHANTMENT_VALUE_EFFECT_TYPE, Ramchants.id("add_binomial"), AddBinomialEnchantmentEffect.CODEC);
     }
 
-    private static <T extends EnchantmentEntityEffect> void registerEntityEffect(String path, T effect) {
-        Registry.register(Registries.ENCHANTMENT_ENTITY_EFFECT_TYPE, Ramchants.id(path), effect.getCodec());
+    ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> ARMOR_EFFECTIVENESS_MULTIPLIER = register("armor_effectiveness_multiplier", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_DAMAGE).listOf()));
+    ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> CONSUME_ARROW = register("consume_arrow", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
+    ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> IGNITE_USER = register("ignite_user", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
+    ComponentType<Unit> INACCURACY = register("inaccuracy", (builder) -> builder.codec(Unit.CODEC));
+
+    private static <T> ComponentType<T> register(String id, UnaryOperator<ComponentType.Builder<T>> builderOperator) {
+        return Registry.register(Registries.ENCHANTMENT_EFFECT_COMPONENT_TYPE, Ramchants.id(id), builderOperator.apply(ComponentType.builder()).build());
     }
 }

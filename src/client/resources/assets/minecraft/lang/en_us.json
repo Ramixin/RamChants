@@ -3,7 +3,7 @@
 
   "enchantment.ramchants.viscosity": "Viscosity",
   "enchantment.ramchants.dullness": "Dullness",
-  "enchantment.ramchants.arthropods_favor": "Arthropods' Favor",
+  "enchantment.ramchants.arthropods_favor": "Arthropod's Favor",
   "enchantment.ramchants.wraithward": "Wraithward",
   "enchantment.ramchants.vulnerability": "Vulnerability",
   "enchantment.ramchants.explosive_fragility": "Explosive Fragility",
@@ -38,5 +38,7 @@
   "enchantment.ramchants.hallow": "Hallow",
 
   "enchantment.minecraft.binding_curse": "Binding",
-  "enchantment.minecraft.vanishing_curse": "Vanishing"
+  "enchantment.minecraft.vanishing_curse": "Vanishing",
+
+  "sound.ramchants.ghost_quiver": "Arrow Dematerializes"
 }

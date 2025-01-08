@@ -23,6 +23,6 @@ public class Ramchants implements ModInitializer {
 
         LOGGER.info("Initializing (1/1)");
         ModEnchantmentEffects.onInitialize();
-
+        ModSounds.onInitialize();
     }
 }
