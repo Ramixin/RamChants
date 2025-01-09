@@ -8,8 +8,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
-import net.ramixin.ramchants.EnchantmentDuck;
 import net.ramixin.ramchants.enchantments.effects.ModEnchantmentEffects;
+import net.ramixin.ramchants.util.EnchantmentDuck;
 import org.apache.commons.lang3.mutable.MutableFloat;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -31,12 +31,27 @@ public abstract class EnchantmentMixin implements EnchantmentDuck {
     }
 
     @Override
-    public void ramChants$modifyConsumeArrow(ServerWorld world, int level, ItemStack projectileStack, MutableFloat chance) {
-        this.modifyValue(ModEnchantmentEffects.CONSUME_ARROW, world, level, projectileStack, chance);
+    public void ramChants$modifyGhostQuiverChance(ServerWorld world, int level, ItemStack projectileStack, MutableFloat chance) {
+        this.modifyValue(ModEnchantmentEffects.GHOST_QUIVER, world, level, projectileStack, chance);
     }
 
     @Override
-    public void ramChants$modifyIgniteUser(ServerWorld world, int level, ItemStack stack, MutableFloat damage) {
-        this.modifyValue(ModEnchantmentEffects.IGNITE_USER, world, level, stack, damage);
+    public void ramChants$modifyKnockbackUser(ServerWorld world, int level, ItemStack stack, MutableFloat strength) {
+        this.modifyValue(ModEnchantmentEffects.KNOCKBACK_USER, world, level, stack, strength);
+    }
+
+    @Override
+    public void ramChants$modifyMissChance(ServerWorld world, int level, ItemStack stack, MutableFloat chance) {
+        this.modifyValue(ModEnchantmentEffects.MISS, world, level, stack, chance);
+    }
+
+    @Override
+    public void ramChants$modifyConsumeDropChance(ServerWorld world, int level, ItemStack stack, MutableFloat chance) {
+        this.modifyValue(ModEnchantmentEffects.CONSUME_DROP, world, level, stack, chance);
+    }
+
+    @Override
+    public void ramChants$modifyStagnationAmount(ServerWorld world, int level, ItemStack stack, MutableFloat amount) {
+        this.modifyValue(ModEnchantmentEffects.STAGNATION, world, level, stack, amount);
     }
 }

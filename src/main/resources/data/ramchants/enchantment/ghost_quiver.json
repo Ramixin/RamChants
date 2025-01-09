@@ -4,7 +4,7 @@
     "translate": "enchantment.ramchants.ghost_quiver"
   },
   "effects": {
-    "ramchants:consume_arrow": [
+    "ramchants:ghost_quiver": [
       {
         "effect": {
           "type": "minecraft:add",

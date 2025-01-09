@@ -1,21 +1,10 @@
 {
   "anvil_cost": 4,
   "description": {
-    "translate": "enchantment.ramchants.boiling_arrow"
+    "translate": "enchantment.ramchants.boiling_string"
   },
   "effects": {
-    "ramchants:ignite_user": [
-      {
-        "effect": {
-          "type": "minecraft:add",
-          "value": {
-            "type": "minecraft:linear",
-            "base": 4,
-            "per_level_above_first": 4
-          }
-        }
-      }
-    ]
+    "ramchants:boiling_string": {}
   },
   "max_cost": {
     "base": 50,

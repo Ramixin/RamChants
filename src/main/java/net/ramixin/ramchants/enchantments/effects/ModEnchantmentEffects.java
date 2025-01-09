@@ -21,8 +21,13 @@ public interface ModEnchantmentEffects {
     }
 
     ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> ARMOR_EFFECTIVENESS_MULTIPLIER = register("armor_effectiveness_multiplier", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_DAMAGE).listOf()));
-    ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> CONSUME_ARROW = register("consume_arrow", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
-    ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> IGNITE_USER = register("ignite_user", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
+    ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> CONSUME_DROP = register("consume_drop", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
+    ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> GHOST_QUIVER = register("ghost_quiver", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
+    ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> MISS = register("miss", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
+    ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> KNOCKBACK_USER = register("knockback_user", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
+    ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> STAGNATION = register("stagnation", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
+
+    ComponentType<Unit> BOILING_STRING = register("boiling_string", (builder) -> builder.codec(Unit.CODEC));
     ComponentType<Unit> INACCURACY = register("inaccuracy", (builder) -> builder.codec(Unit.CODEC));
 
     private static <T> ComponentType<T> register(String id, UnaryOperator<ComponentType.Builder<T>> builderOperator) {

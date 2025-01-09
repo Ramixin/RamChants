@@ -12,8 +12,11 @@
     "EnchantmentMixin",
     "EntityAttributesMixin",
     "FishingBobberEntityMixin",
+    "ItemMixin",
     "LivingEntityMixin",
-    "RangedWeaponItemMixin"
+    "PlayerEntityMixin",
+    "RangedWeaponItemMixin",
+    "TridentEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -27,6 +27,12 @@
     "ramchants:slow_draw",
     "ramchants:inaccuracy",
     "ramchants:drowning",
-    "ramchants:boiling_arrow"
+    "ramchants:boiling_string",
+    "ramchants:repulsion",
+    "ramchants:recoil",
+    "ramchants:whimsy_blade",
+    "ramchants:scarcity",
+    "ramchants:aquatic_impotence",
+    "ramchants:stagnation"
   ]
 }

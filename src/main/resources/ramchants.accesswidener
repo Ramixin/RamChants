@@ -1,3 +1,4 @@
 accessWidener v2 named
 accessible class net/minecraft/enchantment/EnchantmentHelper$Consumer
 accessible class net/minecraft/enchantment/EnchantmentHelper$ContextAwareConsumer
+accessible method net/minecraft/network/packet/s2c/play/EntitySpawnS2CPacket <init> (Lnet/minecraft/network/RegistryByteBuf;)V

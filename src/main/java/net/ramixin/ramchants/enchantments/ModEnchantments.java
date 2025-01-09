@@ -35,18 +35,17 @@ public interface ModEnchantments {
     RegistryKey<Enchantment> SLOW_DRAW = of("slow_draw"); // QUICK CHARGE
     RegistryKey<Enchantment> INACCURACY = of("inaccuracy"); // MULTISHOT
     RegistryKey<Enchantment> DROWNING = of("drowning"); // RESPIRATION
-    RegistryKey<Enchantment> BOILING_ARROW = of("boiling_arrow"); // FLAME
-
-    // IN THE WORKS
-
-
-    // NOT IMPLEMENTED
+    RegistryKey<Enchantment> BOILING_STRING = of("boiling_string"); // FLAME
     RegistryKey<Enchantment> REPULSION = of("repulsion"); // KNOCKBACK
     RegistryKey<Enchantment> RECOIL = of("recoil"); // PUNCH
     RegistryKey<Enchantment> AQUATIC_IMPOTENCE = of("aquatic_impotence"); // IMPALING
     RegistryKey<Enchantment> WHIMSY_BLADE = of("whimsy_blade"); // SWEEPING_EDGE
     RegistryKey<Enchantment> SCARCITY = of("scarcity"); // LOOTING
+
+    // IN THE WORKS
     RegistryKey<Enchantment> STAGNATION = of("stagnation"); // RIPTIDE
+
+    // NOT IMPLEMENTED
     RegistryKey<Enchantment> BETRAYAL = of("betrayal"); // LOYALTY
     RegistryKey<Enchantment> DEFLECTION = of("deflection"); // PIERCING
     

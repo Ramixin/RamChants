@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 public class DamageUtilMixin {
 
     @WrapOperation(method = "getDamageLeft", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getArmorEffectiveness(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/damage/DamageSource;F)F"))
-    private static float applyArmorEffectivenessMultiplier(ServerWorld world, ItemStack stack, Entity user, DamageSource damageSource, float baseArmorEffectiveness, Operation<Float> original) {
+    private static float applyArmorEffectivenessMultiplierEffect(ServerWorld world, ItemStack stack, Entity user, DamageSource damageSource, float baseArmorEffectiveness, Operation<Float> original) {
         return original.call(world, stack, user, damageSource, baseArmorEffectiveness) * ModHelper.getArmorEffectivenessMultiplier(world, stack, user, damageSource, 1F);
     }
 
