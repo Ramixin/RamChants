@@ -37,6 +37,7 @@
       }
     ]
   },
+  "exclusive_set": "#ramchants:exclusive_set/pricking",
   "max_cost": {
     "base": 60,
     "per_level_above_first": 20

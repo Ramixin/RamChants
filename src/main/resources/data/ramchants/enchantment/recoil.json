@@ -18,6 +18,7 @@
       }
     ]
   },
+  "exclusive_set": "#ramchants:exclusive_set/recoil",
   "max_cost": {
     "base": 55,
     "per_level_above_first": 20

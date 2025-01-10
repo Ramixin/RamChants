@@ -3,6 +3,7 @@ package net.ramixin.ramchants;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import net.ramixin.ramchants.enchantments.effects.ModEnchantmentEffects;
+import net.ramixin.ramchants.util.ModSounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

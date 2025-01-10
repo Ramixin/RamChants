@@ -30,28 +30,44 @@ public abstract class EnchantmentMixin implements EnchantmentDuck {
         this.modifyValue(ModEnchantmentEffects.ARMOR_EFFECTIVENESS_MULTIPLIER, world, level, stack, user, damageSource, armorEffectiveness);
     }
 
+    @Unique
     @Override
     public void ramChants$modifyGhostQuiverChance(ServerWorld world, int level, ItemStack projectileStack, MutableFloat chance) {
         this.modifyValue(ModEnchantmentEffects.GHOST_QUIVER, world, level, projectileStack, chance);
     }
 
+    @Unique
     @Override
     public void ramChants$modifyKnockbackUser(ServerWorld world, int level, ItemStack stack, MutableFloat strength) {
         this.modifyValue(ModEnchantmentEffects.KNOCKBACK_USER, world, level, stack, strength);
     }
 
+    @Unique
     @Override
     public void ramChants$modifyMissChance(ServerWorld world, int level, ItemStack stack, MutableFloat chance) {
         this.modifyValue(ModEnchantmentEffects.MISS, world, level, stack, chance);
     }
 
+    @Unique
     @Override
     public void ramChants$modifyConsumeDropChance(ServerWorld world, int level, ItemStack stack, MutableFloat chance) {
         this.modifyValue(ModEnchantmentEffects.CONSUME_DROP, world, level, stack, chance);
     }
 
+    @Unique
     @Override
     public void ramChants$modifyStagnationAmount(ServerWorld world, int level, ItemStack stack, MutableFloat amount) {
         this.modifyValue(ModEnchantmentEffects.STAGNATION, world, level, stack, amount);
+    }
+
+    @Unique
+    @Override
+    public void ramChants$modifyBetrayalChance(ServerWorld world, int level, ItemStack stack, MutableFloat amount) {
+        this.modifyValue(ModEnchantmentEffects.BETRAYAL, world, level, stack, amount);
+    }
+
+    @Override
+    public void ramChants$modifyDeflectionChance(ServerWorld world, int level, ItemStack stack, MutableFloat amount) {
+        this.modifyValue(ModEnchantmentEffects.DEFLECTION, world, level, stack, amount);
     }
 }

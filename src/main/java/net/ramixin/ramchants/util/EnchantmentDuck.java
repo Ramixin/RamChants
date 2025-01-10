@@ -19,4 +19,8 @@ public interface EnchantmentDuck {
     void ramChants$modifyConsumeDropChance(ServerWorld world, int level, ItemStack stack, MutableFloat chance);
 
     void ramChants$modifyStagnationAmount(ServerWorld world, int level, ItemStack stack, MutableFloat amount);
+
+    void ramChants$modifyBetrayalChance(ServerWorld world, int level, ItemStack stack, MutableFloat amount);
+
+    void ramChants$modifyDeflectionChance(ServerWorld world, int level, ItemStack stack, MutableFloat amount);
 }

@@ -17,6 +17,7 @@
       }
     ]
   },
+  "exclusive_set": "#ramchants:exclusive_set/seas_woe",
   "max_cost": {
     "base": 65,
     "per_level_above_first": 9

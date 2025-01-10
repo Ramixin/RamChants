@@ -15,6 +15,7 @@
     "ItemMixin",
     "LivingEntityMixin",
     "PlayerEntityMixin",
+    "ProjectileEntityMixin",
     "RangedWeaponItemMixin",
     "TridentEntityMixin"
   ],

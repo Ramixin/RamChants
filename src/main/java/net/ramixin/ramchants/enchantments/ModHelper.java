@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.ramixin.ramchants.mixins.EnchantmentHelperAccessor;
 import net.ramixin.ramchants.util.EnchantmentDuck;
-import net.ramixin.ramchants.util.ModEffectConsumer;
+import net.ramixin.ramchants.util.ModEffectValueConsumer;
 import org.apache.commons.lang3.mutable.MutableFloat;
 
 public interface ModHelper {
@@ -37,7 +37,15 @@ public interface ModHelper {
         return getValue(world, stack, EnchantmentDuck::ramChants$modifyStagnationAmount);
     }
 
-    private static float getValue(ServerWorld world, ItemStack stack, ModEffectConsumer<ServerWorld, Integer, ItemStack, MutableFloat> function) {
+    static float getBetrayalChance(ServerWorld world, ItemStack stack) {
+        return getValue(world, stack, EnchantmentDuck::ramChants$modifyBetrayalChance);
+    }
+
+    static float getDeflectionChance(ServerWorld world, ItemStack stack) {
+        return getValue(world, stack, EnchantmentDuck::ramChants$modifyDeflectionChance);
+    }
+
+    private static float getValue(ServerWorld world, ItemStack stack, ModEffectValueConsumer<ServerWorld, Integer, ItemStack, MutableFloat> function) {
         MutableFloat mutableFloat = new MutableFloat((float) 0);
         EnchantmentHelperAccessor.invokeForEachEnchantment(stack, (enchantment, level) -> function.accept((EnchantmentDuck) (Object) enchantment.value(), world, level, stack, mutableFloat));
         return mutableFloat.floatValue();

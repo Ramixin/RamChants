@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "ramchants:viscosity",
     "minecraft:aqua_affinity"
   ]
 }

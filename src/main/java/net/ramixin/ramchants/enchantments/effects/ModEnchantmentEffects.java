@@ -26,6 +26,8 @@ public interface ModEnchantmentEffects {
     ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> MISS = register("miss", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
     ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> KNOCKBACK_USER = register("knockback_user", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
     ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> STAGNATION = register("stagnation", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
+    ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> BETRAYAL = register("betrayal", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
+    ComponentType<List<EnchantmentEffectEntry<EnchantmentValueEffect>>> DEFLECTION = register("deflection", (builder) -> builder.codec(EnchantmentEffectEntry.createCodec(EnchantmentValueEffect.CODEC, LootContextTypes.ENCHANTED_ITEM).listOf()));
 
     ComponentType<Unit> BOILING_STRING = register("boiling_string", (builder) -> builder.codec(Unit.CODEC));
     ComponentType<Unit> INACCURACY = register("inaccuracy", (builder) -> builder.codec(Unit.CODEC));

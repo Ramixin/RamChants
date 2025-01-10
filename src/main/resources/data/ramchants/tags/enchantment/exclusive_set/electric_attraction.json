@@ -1,6 +1,6 @@
 {
-  "replace": false,
   "values": [
+    "ramchants:electric_attraction",
     "minecraft:channeling"
   ]
 }

@@ -1,10 +1,10 @@
 {
-  "anvil_cost": 4,
+  "anvil_cost": 2,
   "description": {
-    "translate": "enchantment.ramchants.scarcity"
+    "translate": "enchantment.ramchants.betrayal"
   },
   "effects": {
-    "ramchants:consume_drop": [
+    "ramchants:betrayal": [
       {
         "effect": {
           "type": "minecraft:add",
@@ -17,19 +17,19 @@
       }
     ]
   },
-  "exclusive_set": "#ramchants:exclusive_set/scarcity",
+  "exclusive_set": "#ramchants:exclusive_set/riptide",
   "max_cost": {
-    "base": 65,
-    "per_level_above_first": 9
+    "base": 50,
+    "per_level_above_first": 0
   },
   "max_level": 3,
   "min_cost": {
-    "base": 15,
-    "per_level_above_first": 9
+    "base": 12,
+    "per_level_above_first": 7
   },
   "slots": [
     "mainhand"
   ],
-  "supported_items": "#minecraft:enchantable/sword",
-  "weight": 2
+  "supported_items": "#minecraft:enchantable/trident",
+  "weight": 5
 }

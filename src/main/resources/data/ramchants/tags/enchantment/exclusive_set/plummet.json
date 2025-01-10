@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "minecraft:feather_falling"
+    "minecraft:feather_falling",
+    "ramchants:plummet"
   ]
 }

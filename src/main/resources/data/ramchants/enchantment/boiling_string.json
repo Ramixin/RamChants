@@ -15,6 +15,7 @@
     "base": 20,
     "per_level_above_first": 0
   },
+  "exclusive_set": "#ramchants:exclusive_set/boiling_string",
   "slots": [
     "mainhand"
   ],

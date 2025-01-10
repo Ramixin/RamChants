@@ -41,12 +41,10 @@ public interface ModEnchantments {
     RegistryKey<Enchantment> AQUATIC_IMPOTENCE = of("aquatic_impotence"); // IMPALING
     RegistryKey<Enchantment> WHIMSY_BLADE = of("whimsy_blade"); // SWEEPING_EDGE
     RegistryKey<Enchantment> SCARCITY = of("scarcity"); // LOOTING
+    RegistryKey<Enchantment> STAGNATION = of("stagnation"); // RIPTIDE
+    RegistryKey<Enchantment> BETRAYAL = of("betrayal"); // LOYALTY
 
     // IN THE WORKS
-    RegistryKey<Enchantment> STAGNATION = of("stagnation"); // RIPTIDE
-
-    // NOT IMPLEMENTED
-    RegistryKey<Enchantment> BETRAYAL = of("betrayal"); // LOYALTY
     RegistryKey<Enchantment> DEFLECTION = of("deflection"); // PIERCING
     
     private static RegistryKey<Enchantment> of(String path) {

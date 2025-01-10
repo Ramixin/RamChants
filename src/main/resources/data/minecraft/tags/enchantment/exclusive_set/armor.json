@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-
+    "ramchants:arrows_bane",
+    "ramchants:burning",
+    "ramchants:vulnerability"
   ]
 }
