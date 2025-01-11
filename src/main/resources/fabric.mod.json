@@ -9,7 +9,7 @@
   "license": "MIT",
   "icon": "assets/ramchants/icon.png",
   "environment": "*",
-  "accesswidener": "ramchants.accesswidener",
+  "accessWidener": "ramchants.accesswidener",
   "entrypoints": {
     "client": [
       "net.ramixin.ramchants.client.RamchantsClient"

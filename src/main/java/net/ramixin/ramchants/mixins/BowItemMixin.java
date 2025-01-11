@@ -33,7 +33,7 @@ public class BowItemMixin {
     private void applyKnockbackUserEffect(ItemStack stack, World world, LivingEntity user, int remainingUseTicks, CallbackInfoReturnable<Boolean> cir) {
         if(!(user.getWorld() instanceof ServerWorld serverWorld)) return;
         float k = ModHelper.getKnockbackUserStrength(serverWorld, stack);
-        if(k > 0) ModUtil.applyKnockback(k, user);
+        if(k > 0) ModUtil.applyKnockback(k, user, user.getYaw());
     }
 
 }

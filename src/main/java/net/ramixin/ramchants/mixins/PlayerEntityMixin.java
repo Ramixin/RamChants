@@ -34,7 +34,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
     private void applyKnockbackUserEffect(PlayerEntity instance, Entity entity, Operation<Void> original, @Local DamageSource source) {
         if(!(getWorld() instanceof ServerWorld serverWorld)) return;
         float k = ModHelper.getKnockbackUserStrength(serverWorld, source.getWeaponStack());
-        if(k > 0) ModUtil.applyKnockback(k, this);
+        if(k > 0) ModUtil.applyKnockback(k, this, getYaw());
         original.call(instance, entity);
     }
 

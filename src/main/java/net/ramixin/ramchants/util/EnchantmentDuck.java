@@ -1,5 +1,6 @@
 package net.ramixin.ramchants.util;
 
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.ItemStack;
@@ -23,4 +24,8 @@ public interface EnchantmentDuck {
     void ramChants$modifyBetrayalChance(ServerWorld world, int level, ItemStack stack, MutableFloat amount);
 
     void ramChants$modifyDeflectionChance(ServerWorld world, int level, ItemStack stack, MutableFloat amount);
+
+    static EnchantmentDuck get(Enchantment enchantment) {
+        return (EnchantmentDuck) (Object) enchantment;
+    }
 }

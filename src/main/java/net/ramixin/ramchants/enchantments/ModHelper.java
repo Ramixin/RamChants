@@ -13,7 +13,7 @@ public interface ModHelper {
 
     static float getArmorEffectivenessMultiplier(ServerWorld world, ItemStack stack, Entity user, DamageSource damageSource, float defaultValue) {
         MutableFloat mutableFloat = new MutableFloat(defaultValue);
-        EnchantmentHelperAccessor.invokeForEachEnchantment(stack, (enchantment, level) -> ((EnchantmentDuck)(Object)enchantment.value()).ramChants$modifyArmorEffectivenessMultiplier(world, level, stack, user, damageSource, mutableFloat));
+        EnchantmentHelperAccessor.invokeForEachEnchantment(stack, (enchantment, level) -> EnchantmentDuck.get(enchantment.value()).ramChants$modifyArmorEffectivenessMultiplier(world, level, stack, user, damageSource, mutableFloat));
         return mutableFloat.floatValue();
     }
 
@@ -46,8 +46,9 @@ public interface ModHelper {
     }
 
     private static float getValue(ServerWorld world, ItemStack stack, ModEffectValueConsumer<ServerWorld, Integer, ItemStack, MutableFloat> function) {
+        if(stack == null) return 0;
         MutableFloat mutableFloat = new MutableFloat((float) 0);
-        EnchantmentHelperAccessor.invokeForEachEnchantment(stack, (enchantment, level) -> function.accept((EnchantmentDuck) (Object) enchantment.value(), world, level, stack, mutableFloat));
+        EnchantmentHelperAccessor.invokeForEachEnchantment(stack, (enchantment, level) -> function.accept(EnchantmentDuck.get(enchantment.value()), world, level, stack, mutableFloat));
         return mutableFloat.floatValue();
     }
 
