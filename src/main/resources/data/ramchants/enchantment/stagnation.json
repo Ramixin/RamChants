@@ -18,7 +18,7 @@
       }
     ]
   },
-  "exclusive_set": "#ramchants:exclusive_set/riptide",
+  "exclusive_set": "#ramchants:exclusive_set/stagnation",
   "max_cost": {
     "base": 50,
     "per_level_above_first": 0

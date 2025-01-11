@@ -8,7 +8,6 @@ import net.ramixin.ramchants.Ramchants;
 @SuppressWarnings("unused")
 public interface ModEnchantments {
 
-    // TESTED
     RegistryKey<Enchantment> VISCOSITY = of("viscosity"); //Aqua Affinity
     RegistryKey<Enchantment> AQUA_HAUL = of("aqua_haul"); //Depth Strider
     RegistryKey<Enchantment> ARTHROPODS_FAVOR = of("arthropods_favor"); //Bane of A.
@@ -43,8 +42,6 @@ public interface ModEnchantments {
     RegistryKey<Enchantment> SCARCITY = of("scarcity"); // LOOTING
     RegistryKey<Enchantment> STAGNATION = of("stagnation"); // RIPTIDE
     RegistryKey<Enchantment> BETRAYAL = of("betrayal"); // LOYALTY
-
-    // IN THE WORKS
     RegistryKey<Enchantment> DEFLECTION = of("deflection"); // PIERCING
     
     private static RegistryKey<Enchantment> of(String path) {

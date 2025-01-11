@@ -1,11 +1,11 @@
 package net.ramixin.ramchants.client.mixins.client;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipData;
 import net.ramixin.ramchants.client.RamchantsClient;
 import net.ramixin.ramchants.client.items.tooltip.EnchantabilityToolTipData;
+import net.ramixin.ramchants.items.ModComponents;
 import net.ramixin.ramchants.registries.EnchantabilityEntry;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -28,13 +28,11 @@ public class ItemMixin {
     @Unique
     private void getEnchantabilityToolTip(EnchantabilityEntry entry, ItemStack stack, CallbackInfoReturnable<Optional<TooltipData>> cir) {
         cir.setReturnValue(Optional.of(new EnchantabilityToolTipData(
-                MinecraftClient.getInstance().options.advancedItemTooltips,
+                RamchantsClient.shouldDisplayEnchantabilityInTooltip(),
                 entry.actualValue(stack),
                 entry.actualBaseValue(stack),
-                false,
-                //MinecraftClient.getInstance().options.advancedItemTooltips || MinecraftClient.getInstance().currentScreen instanceof EnchantmentScreen || MinecraftClient.getInstance().currentScreen instanceof GrindstoneScreen,
-                false
-                //(MinecraftClient.getInstance().currentScreen instanceof GrindstoneScreen screen) && ItemStack.areItemsAndComponentsEqual(((GrindstoneScreenDuck) screen).ramchants$getStack(2), stack) && !ItemStack.areItemsAndComponentsEqual(((GrindstoneScreenDuck) screen).ramchants$getStack(1), stack) && !ItemStack.areItemsAndComponentsEqual(((GrindstoneScreenDuck) screen).ramchants$getStack(0), stack)
+                stack.contains(ModComponents.SEALED),
+                RamchantsClient.shouldDisplayMinusOneInTooltip(stack)
         )));
     }
 

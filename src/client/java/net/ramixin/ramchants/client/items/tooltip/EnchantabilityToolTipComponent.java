@@ -23,7 +23,7 @@ public class EnchantabilityToolTipComponent implements TooltipComponent {
         mutableText.formatted(Formatting.DARK_PURPLE);
         if(data.actualBase() == data.actual()) mutableText.append(String.valueOf(data.actual()));
         else mutableText.append(data.actual() + "/" + data.actualBase());
-        if(data.minusOne()) mutableText.append(" (-1)");
+        if(data.minusOne()) mutableText.append(Text.literal(" (-1)").formatted(Formatting.LIGHT_PURPLE));
         text = mutableText;
     }
     }
